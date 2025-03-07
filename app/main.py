@@ -100,5 +100,4 @@ class DeliveryDrone(FlyingRobot):
             self.current_load = cargo
 
     def unhook_load(self) -> None:
-        if self.current_load is not None:
-            self.current_load = None
+        self.current_load = None
