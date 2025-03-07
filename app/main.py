@@ -58,8 +58,12 @@ class FlyingRobot(BaseRobot):
     ) -> None:
         if coords is None:
             coords = [0, 0, 0]
+        elif not isinstance(coords, list) or len(coords) not in {2, 3}:
+            raise ValueError(
+                "Coords must be a list of two or three integers"
+            )
         elif len(coords) == 2:
-            coords = list((*coords, 0))
+            coords = [*coords, 0]
 
         super().__init__(name, weight, coords)
 
