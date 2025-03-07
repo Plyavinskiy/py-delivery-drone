@@ -25,15 +25,19 @@ class BaseRobot:
         self.coords = coords
 
     def go_forward(self, step: int = 1) -> None:
+        self._validate_step(step)
         self.coords[1] += step
 
     def go_back(self, step: int = 1) -> None:
+        self._validate_step(step)
         self.coords[1] -= step
 
     def go_right(self, step: int = 1) -> None:
+        self._validate_step(step)
         self.coords[0] += step
 
     def go_left(self, step: int = 1) -> None:
+        self._validate_step(step)
         self.coords[0] -= step
 
     def get_info(self) -> str:
