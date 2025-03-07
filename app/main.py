@@ -15,9 +15,7 @@ class BaseRobot:
 
         if coords is None:
             coords = [0, 0]
-        elif not isinstance(coords, list):
-            raise ValueError("Coords must be a list of integers")
-        elif len(coords) not in {2, 3}:
+        elif not isinstance(coords, list) or len(coords) not in {2, 3}:
             raise ValueError("Coords must be a list of two or three integers")
 
         self.name = name
